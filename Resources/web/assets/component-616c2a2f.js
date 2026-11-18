@@ -1,0 +1,1 @@
+import{x as e,e as n,A as o,B as t}from"./@vue-ff5544f0.js";const p=e({__name:"component",setup(a){return n(()=>console.warn("重新渲染了")),(c,r)=>(o(),t("div",null," component "))}});export{p as default};

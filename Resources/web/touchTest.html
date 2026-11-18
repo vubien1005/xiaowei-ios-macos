@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vconsole"></script>
+    <script>
+        new VConsole()
+    </script>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" style="width: 100%; height: 100%;display: block;background-color: antiquewhite;"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas')
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+
+
+        canvas.addEventListener('mousemove', (e) => {
+            console.log('mousemove', e.clientX, '屏幕宽度', innerWidth)
+
+            if (e.clientX >= innerWidth) {
+                console.log('到达屏幕最右侧')
+            }
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>云手机图标翻转测试</title>
+  <style>
+    body {
+      display: grid;
+      min-height: 100vh;
+      margin: 0;
+      place-items: center;
+      background: #fff;
+      color: #565656;
+    }
+
+    .cloud-icon {
+      position: relative;
+      display: block;
+      width: 22px;
+      height: 22px;
+    }
+
+    .cloud-front,
+    .cloud-back {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation-duration: 8s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    .cloud-front {
+      animation-name: show-cloud;
+    }
+
+    .cloud-back {
+      inset: 2px 0;
+      box-sizing: border-box;
+      border: 2px solid currentColor;
+      border-radius: 5px;
+      font: 700 10px Arial, sans-serif;
+      transform: scaleX(0);
+      animation-name: show-trial;
+    }
+
+    /* 两面在同一时刻收窄到零，再由另一面展开，模拟侧转时的轮廓。 */
+    @keyframes show-cloud {
+      0%, 40%, 100% { transform: scaleX(1); }
+      45%, 95% { transform: scaleX(0); }
+    }
+
+    @keyframes show-trial {
+      0%, 45%, 95%, 100% { transform: scaleX(0); }
+      50%, 90% { transform: scaleX(1); }
+    }
+  </style>
+</head>
+<body>
+  <span class="cloud-icon" role="img" aria-label="云手机，24 小时免费体验">
+    <svg class="cloud-front" width="22" height="22" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M13 36h23a9 9 0 0 0 1-17.94A13 13 0 0 0 12 16a10 10 0 0 0 1 20Z" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <span class="cloud-back" aria-hidden="true">24h</span>
+  </span>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    <!-- @keyframes march1 {
+      from { stroke-dashoffset: 8; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes march2 {
+      from { stroke-dashoffset: 200; }
+      to { stroke-dashoffset: 0; }
+    } -->
+    @keyframes march3 {
+      from { stroke-dashoffset: 460; }
+      to { stroke-dashoffset: 0; }
+    }
+    <!-- @keyframes march4 {
+      from { stroke-dashoffset: 16; }
+      to { stroke-dashoffset: 0; }
+    } -->
+    <!-- .pattern1 { 
+      stroke-dasharray: 4 4;
+      animation: march1 0.5s linear infinite;
+    }
+    .pattern2 { 
+      stroke-dasharray: 200 200;
+      animation: march2 5s linear infinite;
+    } -->
+    .pattern3 { 
+      stroke-dasharray: 60 400;
+      animation: march3 5s linear infinite;
+    }
+    <!-- .pattern4 { 
+      stroke-dasharray: 12 4;
+      animation: march4 0.5s linear infinite;
+    } -->
+  </style>
+  
+  <!-- 短等距 -->
+  <rect 
+    x="40" 
+    y="20" 
+    width="220" 
+    height="40" 
+    fill="none" 
+    stroke="black" 
+    stroke-width="2"
+    class="pattern1"
+  />
+  
+  <!-- 长等距 -->
+  <rect 
+    x="40" 
+    y="80" 
+    width="220" 
+    height="40" 
+    fill="none" 
+    stroke="black" 
+    stroke-width="1"
+    class="pattern2"
+  />
+  
+  <!-- 长线短距 -->
+  <rect 
+    x="40" 
+    y="140" 
+    width="220" 
+    height="40" 
+    fill="none" 
+    stroke="black" 
+    stroke-width="2"
+    class="pattern3"
+  />
+  
+  <!-- 短线长距 -->
+  <rect 
+    x="40" 
+    y="200" 
+    width="220" 
+    height="40" 
+    fill="none" 
+    stroke="black" 
+    stroke-width="2"
+    class="pattern4"
+  />
+</svg>

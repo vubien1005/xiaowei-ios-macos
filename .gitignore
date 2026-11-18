@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+
+# macOS System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Xcode & Swift Build outputs
+build/
+DerivedData/
+*.xcuserstate
+.swiftpm/
+
+# Temporary files & runtime RPC
+*.log
+xiaowei_rpc_*.json
+*.tmp

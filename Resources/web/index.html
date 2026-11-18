@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" href="/favicon.ico"/>
+  <title>Xiaowei iOS — Quản lý & Điều khiển iPhone trên macOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4524146_dma9rvpqpev.css"/>
+  <script src="/js/polyfill.min.js"></script>
+  <!-- <script src="/js/rtcEngine.min.js"></script> -->
+  <!-- <script type="module" src="/js/BgsSdk.2.10.0.min.js"></script> -->
+  <!-- <script src="/js/SDK.min.js"></script> -->
+  
+
+  <script>
+      // if (window.__TAURI__.core.invoke) window.__TAURI__.core.invoke('device_disconnect')
+      // if (window.__TAURI__.core.invoke) window.__TAURI__.core.invoke('web_view_inited').catch(() => {})
+
+      // 等待获取 brandCode 后再继续加载页面
+      new Promise((resolve) => {
+        window.initPromiseResolve = resolve
+      }).then(() => {
+        return window.__TAURI__.core.invoke('read_sys_config')
+      }).then((payload) => {
+        const brandCode = (JSON.parse(payload) && JSON.parse(payload).brand && JSON.parse(payload).brand.brand_code) || null
+        getBrandOk(brandCode)
+      })
+
+      function getBrandOk(brandCode) {
+        // const autoScanNet = JSON.parse(localStorage.getItem(`config:${brandCode}`) || '{}').autoScanNet
+        // if (autoScanNet === false) window.__TAURI__.core.invoke('device_disconnect')
+
+        localStorage.setItem('brandCode', brandCode)
+        window.brandCode = brandCode
+
+        const html = document.documentElement.innerHTML
+        const reg1 = /.*(<script type="module".*src="\/assets\/index-.*\.js.*).*/
+        const reg2 = /.*(<script type="module" src="\/src\/main.ts.*"><\/script>).*/
+        let match = html.match(reg1)
+        if (!match) match = html.match(reg2)
+
+        const script = document.createElement('script')
+        script.type = 'module'
+        script.src = match[1].match(/src="([^"]+)"/)[1]
+        document.body.appendChild(script)
+        setTimeout(() => {
+          // 删除页面 loading 效果
+          window.unmountedPageBeforeLoaded && window.unmountedPageBeforeLoaded()
+        }, 2000)
+      }
+  </script>
+
+  <script charset="UTF-8" id="LA_COLLECT" src="/js/51la.min.js"></script>
+  <script>
+      window.LA.init({
+        id: '3Fhyajcyt9WbBkbA',
+        ck: '3Fhyajcyt9WbBkbA',
+      })
+
+      window.tools = {}
+      window.storage = {}
+  </script>
+  <script src="/js/Sortable.min.js"></script>
+  <script src="/js/cnchar.min.js"></script>
+  <!----<script type="module" crossoriginsrc="/assets/index-b5cf8194.js"></script>---->
+  <link rel="modulepreload" crossorigin href="/assets/@tauri-apps-7e91dd0e.js">
+  <link rel="modulepreload" crossorigin href="/assets/emittery-55b98391.js">
+  <link rel="modulepreload" crossorigin href="/assets/@amap-aca98dec.js">
+  <link rel="modulepreload" crossorigin href="/assets/papaparse-58c433af.js">
+  <link rel="modulepreload" crossorigin href="/assets/dayjs-930c7b54.js">
+  <link rel="modulepreload" crossorigin href="/assets/date-fns-521d2947.js">
+  <link rel="modulepreload" crossorigin href="/assets/@vue-ff5544f0.js">
+  <link rel="modulepreload" crossorigin href="/assets/seemly-758b1936.js">
+  <link rel="modulepreload" crossorigin href="/assets/lodash-es-fc6827f3.js">
+  <link rel="modulepreload" crossorigin href="/assets/evtd-b614532e.js">
+  <link rel="modulepreload" crossorigin href="/assets/vooks-978509ce.js">
+  <link rel="modulepreload" crossorigin href="/assets/@css-render-1e92001d.js">
+  <link rel="modulepreload" crossorigin href="/assets/vdirs-b0483831.js">
+  <link rel="modulepreload" crossorigin href="/assets/@juggle-fdc8f16c.js">
+  <link rel="modulepreload" crossorigin href="/assets/@emotion-8a8e73f6.js">
+  <link rel="modulepreload" crossorigin href="/assets/css-render-48829f31.js">
+  <link rel="modulepreload" crossorigin href="/assets/vueuc-bdd0602c.js">
+  <link rel="modulepreload" crossorigin href="/assets/treemate-df9f8299.js">
+  <link rel="modulepreload" crossorigin href="/assets/date-fns-tz-32fe5771.js">
+  <link rel="modulepreload" crossorigin href="/assets/async-validator-7f96df71.js">
+  <link rel="modulepreload" crossorigin href="/assets/naive-ui-4058ff8a.js">
+  <link rel="modulepreload" crossorigin href="/assets/idb-keyval-6776c9ff.js">
+  <link rel="modulepreload" crossorigin href="/assets/encode-utf8-f813de00.js">
+  <link rel="modulepreload" crossorigin href="/assets/dijkstrajs-f906a09e.js">
+  <link rel="modulepreload" crossorigin href="/assets/qrcode-9719fc56.js">
+  <link rel="modulepreload" crossorigin href="/assets/sortablejs-9c3c89c5.js">
+  <link rel="modulepreload" crossorigin href="/assets/@vueuse-e882ac9d.js">
+  <link rel="modulepreload" crossorigin href="/assets/rxjs-08868e40.js">
+  <link rel="modulepreload" crossorigin href="/assets/@intlify-23143c0e.js">
+  <link rel="modulepreload" crossorigin href="/assets/vue-i18n-e71848d8.js">
+  <link rel="modulepreload" crossorigin href="/assets/vi-VN-6258b3b5.js">
+  <link rel="modulepreload" crossorigin href="/assets/base64-js-50a5cdf9.js">
+  <link rel="modulepreload" crossorigin href="/assets/ieee754-44f7831e.js">
+  <link rel="modulepreload" crossorigin href="/assets/buffer-de685698.js">
+  <link rel="modulepreload" crossorigin href="/assets/vue-router-74f56153.js">
+  <link rel="modulepreload" crossorigin href="/assets/chroma-js-2598523a.js">
+  <link rel="modulepreload" crossorigin href="/assets/vue-demi-71ba0ef2.js">
+  <link rel="modulepreload" crossorigin href="/assets/pinia-0e13fd62.js">
+  <link rel="modulepreload" crossorigin href="/assets/dexie-1d3afdb3.js">
+  <link rel="modulepreload" crossorigin href="/assets/crypto-js-76bda40e.js">
+  <link rel="modulepreload" crossorigin href="/assets/pinia-plugin-persistedstate-600d414d.js">
+  <link rel="modulepreload" crossorigin href="/assets/hotkeys-js-2d90777f.js">
+  <link rel="modulepreload" crossorigin href="/assets/@wangeditor-df572027.js">
+  <link rel="stylesheet" href="/assets/@wangeditor-9593e9ac.css">
+  <link rel="stylesheet" href="/assets/index-511f49a0.css">
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="/loading.js"></script>
+
+  <script>
+      window.initPromiseResolve()
+  </script>
+  
+
+  <script>
+    const aiCss = document.createElement('link')
+    aiCss.rel = 'stylesheet'
+    // 每 12 小时更新一次
+    const t = Math.floor(Date.now() / 1000 / 60 / 60 / 12)
+    aiCss.href = `https://xiaowei-manage-backend.oss-cn-hangzhou.aliyuncs.com/conf/ai.css?t=${t}`
+    document.head.appendChild(aiCss)
+  </script>
+</body>
+
+</html>
