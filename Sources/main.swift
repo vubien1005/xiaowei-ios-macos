@@ -1329,8 +1329,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
         if FileManager.default.fileExists(atPath: devCandidate.path) {
             return devCandidate
         }
-        return URL(fileURLWithPath: "/Users/bienvu/.gemini/antigravity/scratch/xiaowei-ios-macos/Resources")
-            .appendingPathComponent(filename)
+        let appRes = URL(fileURLWithPath: "/Applications/Xiaowei iOS.app/Contents/Resources").appendingPathComponent(filename)
+        if FileManager.default.fileExists(atPath: appRes.path) {
+            return appRes
+        }
+        return Bundle.main.bundleURL.appendingPathComponent("Contents/Resources").appendingPathComponent(filename)
     }
 
     private func showNonBlockingProgressBanner(_ title: String) {
@@ -1539,14 +1542,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
             return
         }
 
-        let toolkitDir = URL(fileURLWithPath: "/Users/bienvu/.gemini/antigravity/scratch/xiaowei-ios-macos/Bo-Cong-Cu-Restore-Nhieu-May")
-        let targetDir: URL
-        if FileManager.default.fileExists(atPath: toolkitDir.path) {
-            targetDir = toolkitDir
-        } else {
-            targetDir = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
-                ?? FileManager.default.homeDirectoryForCurrentUser
-        }
+        let candidateDirs = [
+            Bundle.main.bundleURL.deletingLastPathComponent().appendingPathComponent("Bo-Cong-Cu-Restore-Nhieu-May"),
+            URL(fileURLWithPath: FileManager.default.currentDirectoryPath).appendingPathComponent("Bo-Cong-Cu-Restore-Nhieu-May"),
+            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Desktop/Bo-Cong-Cu-Restore-Nhieu-May"),
+            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Downloads/Bo-Cong-Cu-Restore-Nhieu-May")
+        ]
+        let targetDir = candidateDirs.first(where: { FileManager.default.fileExists(atPath: $0.path) })
+            ?? FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
+            ?? FileManager.default.homeDirectoryForCurrentUser
         let outURL = targetDir.appendingPathComponent("WiFi-Tu-Dong-iPhone.mobileconfig")
         let scriptURL = resolveResourceFile("batch_provision_ios.py")
 
@@ -1614,10 +1618,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
     }
 
     @objc private func openRestoreGuide(_ sender: Any?) {
-        let toolkitGuide = URL(fileURLWithPath: "/Users/bienvu/.gemini/antigravity/scratch/xiaowei-ios-macos/Bo-Cong-Cu-Restore-Nhieu-May/HUONG-DAN-NHANH.md")
-        let guideURL = FileManager.default.fileExists(atPath: toolkitGuide.path)
-            ? toolkitGuide
-            : resolveResourceFile("HUONG-DAN-NHANH.md")
+        let candidateGuides = [
+            Bundle.main.bundleURL.deletingLastPathComponent().appendingPathComponent("Bo-Cong-Cu-Restore-Nhieu-May/HUONG-DAN-NHANH.md"),
+            URL(fileURLWithPath: FileManager.default.currentDirectoryPath).appendingPathComponent("Bo-Cong-Cu-Restore-Nhieu-May/HUONG-DAN-NHANH.md"),
+            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Desktop/Bo-Cong-Cu-Restore-Nhieu-May/HUONG-DAN-NHANH.md"),
+            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Downloads/Bo-Cong-Cu-Restore-Nhieu-May/HUONG-DAN-NHANH.md")
+        ]
+        let guideURL = candidateGuides.first(where: { FileManager.default.fileExists(atPath: $0.path) })
+            ?? resolveResourceFile("HUONG-DAN-NHANH.md")
 
         if FileManager.default.fileExists(atPath: guideURL.path) {
             if !NSWorkspace.shared.open(guideURL) {

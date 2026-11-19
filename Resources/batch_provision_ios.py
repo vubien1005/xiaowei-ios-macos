@@ -46,9 +46,12 @@ os.makedirs(CACHE_DIR, exist_ok=True)
 # Locate bundled site-packages (works from .app bundle, source tree, or standalone toolkit)
 _SITE_CANDIDATES = [
     os.path.join(SCRIPT_DIR, "site-packages"),
+    os.path.join(SCRIPT_DIR, "..", "Xiaowei iOS.app", "Contents", "Resources", "site-packages"),
+    os.path.join(SCRIPT_DIR, "Xiaowei iOS.app", "Contents", "Resources", "site-packages"),
     os.path.join(PROJECT_ROOT, ".venv", "lib", "python3.9", "site-packages"),
+    os.path.join(PROJECT_ROOT, ".venv", "lib", f"python{sys.version_info.major}.{sys.version_info.minor}", "site-packages"),
     "/Applications/Xiaowei iOS.app/Contents/Resources/site-packages",
-    "/Users/bienvu/.gemini/antigravity/scratch/xiaowei-ios-macos/.venv/lib/python3.9/site-packages",
+    os.path.expanduser("~/Library/Application Support/com.xiaowei.iphone/site-packages"),
 ]
 BUNDLED_SITE = None
 for _cand in _SITE_CANDIDATES:
@@ -62,7 +65,7 @@ USBMUXD_SOCKET = "/var/run/usbmuxd"
 DEFAULT_DEV_TEAM = os.environ.get("XIAOWEI_DEVELOPMENT_TEAM", "D494LPV2H6")
 WDA_XCODEPROJ_CANDIDATES = [
     os.environ.get("XIAOWEI_WDA_XCODEPROJ", ""),
-    "/Users/bienvu/.gemini/antigravity/scratch/ios_remote_controller/WebDriverAgent/WebDriverAgent.xcodeproj",
+    os.path.join(PROJECT_ROOT, "WebDriverAgent", "WebDriverAgent.xcodeproj"),
     os.path.expanduser("~/WebDriverAgent/WebDriverAgent.xcodeproj"),
 ]
 _XCODE_PROVISION_LOCK = threading.Lock()
@@ -412,7 +415,7 @@ def resolve_wda_ipa_path() -> str:
         os.path.join(APP_SUPPORT_DIR, "WebDriverAgentRunner.ipa"),
         os.path.join(SCRIPT_DIR, "WebDriverAgentRunner.ipa"),
         "/Applications/Xiaowei iOS.app/Contents/Resources/WebDriverAgentRunner.ipa",
-        "/Users/bienvu/.gemini/antigravity/scratch/xiaowei-ios-macos/Resources/WebDriverAgentRunner.ipa",
+        os.path.join(PROJECT_ROOT, "Resources", "WebDriverAgentRunner.ipa"),
     ]
     existing = [p for p in candidates if os.path.isfile(p)]
     if not existing:
@@ -661,7 +664,7 @@ def rebuild_and_resign_ipa_for_udid(udid: str, base_ipa_path: str, log_fn=None) 
                 # Also update writable Resources/WebDriverAgentRunner.ipa locations so future builds pick it up
                 for mirror_p in (
                     os.path.join(SCRIPT_DIR, "WebDriverAgentRunner.ipa"),
-                    "/Users/bienvu/.gemini/antigravity/scratch/xiaowei-ios-macos/Resources/WebDriverAgentRunner.ipa",
+                    os.path.join(PROJECT_ROOT, "Resources", "WebDriverAgentRunner.ipa"),
                 ):
                     if os.path.isdir(os.path.dirname(mirror_p)) and os.access(os.path.dirname(mirror_p), os.W_OK):
                         try:

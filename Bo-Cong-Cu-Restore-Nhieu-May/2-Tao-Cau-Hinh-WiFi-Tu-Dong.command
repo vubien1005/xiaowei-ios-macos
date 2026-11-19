@@ -7,9 +7,10 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 PROVISIONER=""
 for cand in \
+  "$SCRIPT_DIR/batch_provision_ios.py" \
   "$SCRIPT_DIR/../Resources/batch_provision_ios.py" \
   "/Applications/Xiaowei iOS.app/Contents/Resources/batch_provision_ios.py" \
-  "/Users/bienvu/.gemini/antigravity/scratch/xiaowei-ios-macos/Resources/batch_provision_ios.py"
+  "$SCRIPT_DIR/../Xiaowei iOS.app/Contents/Resources/batch_provision_ios.py"
 do
   if [ -f "$cand" ]; then
     PROVISIONER="$cand"
