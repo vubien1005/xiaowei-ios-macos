@@ -1,0 +1,110 @@
+================================================================================
+    🚀 XIAOWEI iOS FOR macOS (APPLE SILICON NATIVE) — HƯỚNG DẪN MÁY MAC MỚI
+================================================================================
+
+Chào bạn, đây là gói cài đặt hoàn chỉnh của ứng dụng Xiaowei iOS đã được biên dịch 
+chuẩn Native Apple Silicon (M1 / M2 / M3 / M4 / M5...) với giao diện 100% Tiếng Việt, 
+nhân điều khiển Turbo WDA siêu tốc (<5ms) và bộ công cụ Restore hàng loạt (0đ).
+
+Toàn bộ gói ứng dụng đã được đóng gói sẵn sàng để chuyển sang bất kỳ máy Mac nào khác!
+
+--------------------------------------------------------------------------------
+📦 I. CÁCH CHUYỂN SANG MÁY MAC MỚI
+--------------------------------------------------------------------------------
+Bạn có thể chuyển file zip "Xiaowei-iOS-macOS-AppleSilicon.zip" hoặc thư mục gói 
+sang máy Mac mới bằng 1 trong các cách sau:
+  1. Qua AirDrop (Nhanh và tiện nhất giữa 2 máy Mac gần nhau).
+  2. Qua USB / Ổ cứng di động (Khuyên dùng định dạng exFAT hoặc APFS).
+  3. Tải lên Google Drive, OneDrive, Zalo File, Telegram rồi tải về máy mới.
+
+--------------------------------------------------------------------------------
+⚡ II. CÀI ĐẶT 1 CHẠM TRÊN MÁY MAC MỚI (CHỈ MẤT 5 GIÂY)
+--------------------------------------------------------------------------------
+Sau khi nhận file trên máy Mac mới:
+
+👉 BƯỚC 1: Giải nén file zip (nếu nhận file dạng .zip). Bạn sẽ thấy thư mục gồm:
+   - Ứng dụng: "Xiaowei iOS.app"
+   - Script cài đặt: "1-CAI-DAT-VA-MO-APP.command"
+   - Bộ công cụ Restore: "Bo-Cong-Cu-Restore-Nhieu-May"
+   - Hướng dẫn: "HUONG_DAN_SU_DUNG_MAY_MOI.txt" & ".html"
+
+👉 BƯỚC 2: Nháy đúp chuột vào file:
+   👉 "1-CAI-DAT-VA-MO-APP.command"
+
+   File script này sẽ tự động làm toàn bộ các việc sau:
+   - Tự động sao chép "Xiaowei iOS.app" vào thư mục /Applications của máy mới.
+   - Gỡ bỏ chặn bảo mật Gatekeeper của macOS (lỗi "App is damaged / không mở được").
+   - Cấp quyền thực thi hệ thống cho mã nguồn Native Swift và lõi điều khiển Python.
+   - Khởi động ứng dụng Xiaowei iOS lên ngay lập tức!
+
+💡 TỪ LẦN THỨ 2 TRỞ ĐI:
+   Bạn chỉ cần bấm trực tiếp vào icon "Xiaowei iOS" trong Launchpad hoặc 
+   thư mục Ứng dụng (/Applications) như mọi ứng dụng Mac bình thường.
+
+--------------------------------------------------------------------------------
+📱 III. KẾT NỐI & SỬ DỤNG ĐIỀU KHIỂN IPHONE
+--------------------------------------------------------------------------------
+1. Cắm iPhone vào máy Mac qua cáp USB (Lightning hoặc Type-C).
+2. Mở khóa màn hình iPhone:
+   - Nếu màn hình iPhone hiện thông báo "Tin cậy máy tính này?", hãy bấm:
+     👉 [Tin cậy] (Trust) và nhập mật khẩu mở khóa màn hình iPhone.
+3. Ứng dụng Xiaowei iOS sẽ tự động phát hiện thiết bị và hiển thị hình ảnh màn hình 
+   lên giao diện dạng lưới.
+4. Thao tác điều khiển:
+   - Click chuột / Chạm bàn rê Trackpad: Thao tác chạm trực tiếp tức thì (độ trễ ~3-5ms).
+   - Cuộn chuột / Vuốt Trackpad: Cuộn lướt màn hình mượt mà.
+   - Nháy đúp vào thiết bị: Phóng to xem riêng màn hình lớn chất lượng cao.
+   - Kéo cạnh phải: Thanh công cụ điều khiển bên phải có thể kéo co giãn tự do 
+     (nháy đúp vào đường chia để căn chuẩn kích thước 275px).
+   - Phím tắt bàn phím: Gõ chữ tiếng Việt / ASCII trực tiếp từ bàn phím Mac vào iPhone.
+
+--------------------------------------------------------------------------------
+🔄 IV. BỘ CÔNG CỤ RESTORE TRẮNG & CÀI HÀNG LOẠT (CHI PHÍ 0Đ)
+--------------------------------------------------------------------------------
+Trong thư mục kèm theo "Bo-Cong-Cu-Restore-Nhieu-May" (hoặc truy cập ngay trên 
+thanh menu macOS: Thiết bị & Khôi phục):
+
+1. File 1: "1-Tai-Hoac-Mo-Apple-Configurator.command"
+   - Tải hoặc mở Apple Configurator miễn phí (0đ) chính chủ Apple từ App Store.
+
+2. File 2: "2-Tao-Cau-Hinh-WiFi-Tu-Dong.command"
+   - Nhập tên Wi-Fi và mật khẩu của phòng máy -> xuất ra file profile tự động 
+     "WiFi-Tu-Dong-iPhone.mobileconfig".
+   - Gắn file này vào Bản thiết kế (Blueprint) của Apple Configurator để toàn bộ dàn 
+     iPhone sau khi Restore xong tự động bắt Wi-Fi, tự bỏ qua màn hình Hello/Siri/Passcode 
+     và tự động Tin cậy máy Mac.
+
+3. File 3: "3-Cai-Va-Gia-Han-WDA-Hang-Loat.command" (hoặc phím tắt Cmd + Shift + R trong App)
+   - Cài đặt mới hoặc kiểm tra/gia hạn chứng chỉ Turbo WDA siêu tốc cho toàn bộ 
+     dàn máy iPhone đang cắm USB chỉ với 1 cú click.
+
+📌 Lưu ý với iOS 16, 17, 18+:
+   - Sau khi Restore trắng, hãy vào: Cài đặt -> Quyền riêng tư & Bảo mật -> 
+     Chế độ nhà phát triển (Developer Mode) -> Bật và Khởi động lại máy.
+   - Vào Cài đặt -> Cài đặt chung -> Quản lý VPN & Thiết bị -> Tin cậy chứng chỉ Apple ID.
+
+--------------------------------------------------------------------------------
+🛠️ V. XỬ LÝ SỰ CỐ THƯỜNG GẶP (TROUBLESHOOTING)
+--------------------------------------------------------------------------------
+1. Lỗi: "Xiaowei iOS.app is damaged and can't be opened" (App bị hỏng):
+   - Nguyên nhân: Tính năng Gatekeeper của macOS tự động cách ly các file tải về.
+   - Cách sửa: Chạy file "1-CAI-DAT-VA-MO-APP.command" hoặc mở Terminal và chạy lệnh:
+     xattr -cr "/Applications/Xiaowei iOS.app"
+
+2. Lỗi: Không thấy iPhone xuất hiện trên màn hình:
+   - Kiểm tra cáp USB và cổng kết nối (khuyên dùng cổng trực tiếp trên Mac hoặc Hub có cấp nguồn).
+   - Rút cáp cắm lại và đảm bảo đã bấm [Tin cậy] trên màn hình iPhone.
+   - Đảm bảo iPhone đã bật Chế độ nhà phát triển (trên iOS 16+).
+
+3. Lỗi: Hết hạn chứng chỉ 7 ngày (Apple ID cá nhân miễn phí):
+   - Mở Xiaowei iOS, bấm menu: "Thiết bị & Khôi phục -> 🔄 Bắt buộc cài mới / Gia hạn 7 ngày"
+     hoặc bấm tổ hợp phím "Cmd + Shift + R" để hệ thống tự động gia hạn toàn bộ dàn máy.
+
+4. (Tùy chọn) Di chuyển lịch sử/nhóm thiết bị từ máy Mac cũ sang:
+   - Nếu bạn muốn giữ nguyên các ghi chú/tên đặt riêng cho từng máy từ máy Mac cũ, 
+     hãy sao chép thư mục sau từ máy cũ sang máy mới:
+     ~/Library/Application Support/com.xiaowei.iphone
+
+================================================================================
+Chúc bạn làm việc hiệu quả và mượt mà cùng Xiaowei iOS trên máy Mac mới!
+================================================================================

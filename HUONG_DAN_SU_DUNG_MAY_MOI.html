@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hướng Dẫn Sử Dụng Xiaowei iOS Trên Máy Mac Mới</title>
+  <style>
+    :root {
+      --primary: #0071e3;
+      --primary-hover: #0077ed;
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --card-border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #238636;
+      --accent-hover: #2ea043;
+      --warning: #d29922;
+      --code-bg: #21262d;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 30px 20px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px 30px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 30px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      background: rgba(0, 113, 227, 0.2);
+      color: #58a6ff;
+      border: 1px solid rgba(0, 113, 227, 0.4);
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .card h2 {
+      font-size: 20px;
+      color: #58a6ff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+    }
+    .step-box {
+      background: var(--code-bg);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 14px 0;
+    }
+    .step-title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .step-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    code {
+      background: rgba(110, 118, 129, 0.4);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      color: #f0883e;
+    }
+    pre {
+      background: #090d13;
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      color: #7ee787;
+      margin: 10px 0;
+      border: 1px solid #30363d;
+    }
+    ul, ol {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+    li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .alert-box {
+      background: rgba(210, 153, 34, 0.15);
+      border: 1px solid rgba(210, 153, 34, 0.4);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      color: #f1e05a;
+    }
+    .tip-box {
+      background: rgba(35, 134, 54, 0.15);
+      border: 1px solid rgba(35, 134, 54, 0.4);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      color: #7ee787;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--card-border);
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Apple Silicon Native (M1 · M2 · M3 · M4)</div>
+      <h1>Hướng Dẫn Sử Dụng Xiaowei iOS Trên Máy Mac Mới</h1>
+      <p class="subtitle">Ứng dụng quản lý, điều khiển & tự động hóa dàn iPhone qua USB với độ trễ siêu thấp &lt;5ms</p>
+    </header>
+
+    <div class="card">
+      <h2>🚀 1. Cài Đặt 1 Chạm Trên Máy Mac Mới (Khuyên Dùng)</h2>
+      <p>Sau khi chép thư mục hoặc giải nén file <code>Xiaowei-iOS-macOS-AppleSilicon.zip</code> trên máy Mac mới, bạn chỉ cần thực hiện 2 bước:</p>
+      
+      <div class="step-box">
+        <div class="step-title">👉 Bước 1: Nháy đúp chuột vào file <code>1-CAI-DAT-VA-MO-APP.command</code></div>
+        <div class="step-desc">
+          Cửa sổ Terminal sẽ tự động chạy trong 2-3 giây để:
+          <ul>
+            <li>Tự động sao chép <b>Xiaowei iOS.app</b> vào thư mục <code>/Applications</code> của máy mới.</li>
+            <li>Gỡ bỏ cơ chế kiểm duyệt cách ly bảo mật Gatekeeper (Quarantine) của macOS.</li>
+            <li>Cấp quyền thực thi hệ thống cho mã nguồn Swift và lõi điều khiển Python.</li>
+            <li>Khởi chạy ứng dụng lên màn hình ngay lập tức!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        💡 <b>Từ lần thứ 2 trở đi:</b> Bạn có thể mở trực tiếp từ Launchpad hoặc nhấp vào icon <b>Xiaowei iOS</b> trong thư mục <b>Applications (Ứng dụng)</b> như mọi app thông thường.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📱 2. Kết Nối iPhone & Bắt Đầu Điều Khiển</h2>
+      <ol>
+        <li>Cắm cáp USB (Lightning / Type-C) nối iPhone với máy Mac (hoặc cắm qua Hub USB).</li>
+        <li>Mở khóa màn hình iPhone. Khi màn hình hiện thông báo <b>"Tin cậy máy tính này?"</b>:
+          <br>👉 Bấm chọn <b>Tin cậy (Trust)</b> và nhập mật mã khóa màn hình của iPhone.
+        </li>
+        <li>Ứng dụng Xiaowei iOS sẽ tự động nhận diện thiết bị và truyền hình ảnh màn hình lên lưới điều khiển.</li>
+      </ol>
+
+      <div class="step-box">
+        <div class="step-title">🎮 Các Thao Tác Nổi Bật:</div>
+        <ul>
+          <li><b>Click / Chạm bàn rê:</b> Thao tác cảm ứng trực tiếp siêu mượt, độ trễ chỉ ~3-5ms.</li>
+          <li><b>Nháy đúp vào màn hình máy:</b> Bật chế độ xem riêng Màn hình lớn (Single View).</li>
+          <li><b>Kéo co giãn thanh công cụ bên phải:</b> Kéo tự do từ 150px đến 480px (nháy đúp vào đường phân cách để căn chuẩn 275px).</li>
+          <li><b>Bàn phím Mac:</b> Gõ trực tiếp văn bản tiếng Việt / ASCII sang iPhone.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🔄 3. Bộ Công Cụ Restore Trắng & Cài Đặt Hàng Loạt (Chi Phí 0đ)</h2>
+      <p>Trong thư mục kèm theo <code>Bo-Cong-Cu-Restore-Nhieu-May</code> (hoặc bấm menu trên cùng <b>Thiết bị & Khôi phục</b>):</p>
+      
+      <ul>
+        <li><b>1-Tai-Hoac-Mo-Apple-Configurator.command:</b> Mở ứng dụng Apple Configurator chính chủ tải miễn phí từ Mac App Store.</li>
+        <li><b>2-Tao-Cau-Hinh-WiFi-Tu-Dong.command:</b> Nhập Wi-Fi phòng máy để tạo file <code>.mobileconfig</code> gắn vào Blueprint, giúp toàn bộ máy sau khi Restore tự động bắt Wi-Fi và tự Tin cậy máy Mac.</li>
+        <li><b>3-Cai-Va-Gia-Han-WDA-Hang-Loat.command</b> (hoặc phím tắt <code>Cmd + Shift + R</code>): Tự động nạp Turbo WDA siêu tốc cho cả dàn máy cùng lúc.</li>
+      </ul>
+
+      <div class="alert-box">
+        ⚠️ <b>Lưu ý trên iOS 16, 17, 18+:</b> Sau khi Restore trắng, hãy vào <i>Cài đặt -> Quyền riêng tư & Bảo mật -> Chế độ nhà phát triển (Developer Mode) -> Bật & Khởi động lại</i>. Sau đó vào <i>Cài đặt chung -> Quản lý VPN & Thiết bị -> Tin cậy chứng chỉ Apple ID</i>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🛠️ 4. Xử Lý Các Sự Cố Thường Gặp (Troubleshooting)</h2>
+      
+      <div class="step-box">
+        <div class="step-title">❓ Lỗi: "App is damaged and can't be opened" (App bị hỏng không mở được)</div>
+        <div class="step-desc">
+          Do tính năng Gatekeeper của macOS chặn ứng dụng tải từ bên ngoài.
+          <br><b>Cách sửa:</b> Nháy đúp file <code>1-CAI-DAT-VA-MO-APP.command</code> hoặc mở Terminal gõ lệnh:
+          <pre>xattr -cr "/Applications/Xiaowei iOS.app"</pre>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-title">❓ Lỗi: iPhone cắm cáp nhưng không lên hình</div>
+        <div class="step-desc">
+          <ul>
+            <li>Đảm bảo bạn đã mở khóa màn hình iPhone và bấm <b>Tin cậy (Trust)</b>.</li>
+            <li>Thử đổi cáp hoặc cắm trực tiếp vào cổng USB của Mac thay vì qua Hub chia cổng thụ động không nguồn.</li>
+            <li>Kiểm tra xem iPhone đã bật <b>Chế độ nhà phát triển</b> chưa (đối với iOS 16+).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-title">❓ Lỗi: Hết hạn chứng chỉ 7 ngày (Apple ID cá nhân 0đ)</div>
+        <div class="step-desc">
+          Chỉ cần nhấn tổ hợp phím <code>Cmd + Shift + R</code> ngay trong ứng dụng hoặc chạy file <code>3-Cai-Va-Gia-Han-WDA-Hang-Loat.command</code> để hệ thống tự gia hạn 1 chạm cho toàn bộ thiết bị.
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-title">📂 (Tùy chọn) Chuyển dữ liệu thiết bị từ máy Mac cũ sang</div>
+        <div class="step-desc">
+          Nếu bạn muốn mang theo toàn bộ tên đặt riêng, nhóm máy và cấu hình từ máy Mac cũ, hãy sao chép thư mục sau từ máy cũ sang máy mới:
+          <pre>~/Library/Application Support/com.xiaowei.iphone</pre>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Xiaowei iOS for macOS (Apple Silicon Native) · 100% Tiếng Việt · Turbo WDA &lt;5ms
+    </footer>
+  </div>
+</body>
+</html>
